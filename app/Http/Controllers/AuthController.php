@@ -10,6 +10,7 @@ class AuthController extends Controller
 {
     public function register(Request $request)
     {
+        
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|unique:users',
@@ -23,6 +24,8 @@ class AuthController extends Controller
         ]);
 
         return response()->json(['user' => $user], 201);
+        
+
     }
 
     public function login(Request $request)

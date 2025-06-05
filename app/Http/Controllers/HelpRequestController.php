@@ -18,7 +18,6 @@ class HelpRequestController extends Controller
             'description' => 'required|string',
         ]);
 
-        
         $helpRequest = HelpRequest::create([
             'user_id' => auth()->id(),
             'title' => $request->title,
